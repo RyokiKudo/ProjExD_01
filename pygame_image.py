@@ -10,7 +10,9 @@ def main():
     kk_img = pg.image.load("ex01/fig/3.png") #こうかとん画像 読み込み
     kk_img = pg.transform.flip(kk_img, True, False)
     kk_img2 = pg.transform.rotozoom(kk_img,10, 1.0)
-    kk_imgs = [kk_img,kk_img2]
+    kk_img3 = pg.transform.rotozoom(kk_img,20, 1.0)
+    kk_img4 = pg.transform.rotozoom(kk_img,30 ,1.0)
+    kk_imgs = [kk_img,kk_img2,kk_img3,kk_img4]
     tmr = 0
     while True:
         for event in pg.event.get():
@@ -21,9 +23,10 @@ def main():
         screen.blit(bg_img,[1600-x,0])
         screen.blit(kk_imgs[tmr%len(kk_imgs)],[300,200])
         
+        
         pg.display.update()
         tmr += 1        
-        clock.tick(100)
+        clock.tick(1000)
         
 
 
